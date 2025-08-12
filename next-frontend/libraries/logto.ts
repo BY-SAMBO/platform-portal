@@ -6,7 +6,4 @@ export const logtoClient = new LogtoClient({
   endpoint: process.env.NEXT_PUBLIC_LOGTO_ENDPOINT!,
   baseUrl: process.env.NEXT_PUBLIC_BASE_URL!,
   cookieSecret: process.env.LOGTO_COOKIE_SECRET!,
-  // Optional: Configure additional settings
-  resources: [], // Add your API resources here if needed
-  scopes: [], // Add additional scopes if needed
 });

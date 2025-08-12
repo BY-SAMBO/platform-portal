@@ -2,7 +2,7 @@ import useSWR from 'swr';
 import Link from 'next/link';
 import Head from 'next/head';
 
-const fetcher = (url: string) => fetch(url).then((res) => res.json());
+const fetcher = (url) => fetch(url).then((res) => res.json());
 
 export default function Dashboard() {
   const { data, error, isLoading } = useSWR('/api/logto/user', fetcher);
