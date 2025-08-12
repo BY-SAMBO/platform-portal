@@ -1,0 +1,9 @@
+body { font-family: 'Poppins', sans-serif !important; background: linear-gradient(135deg, #1e1e2f 0%, #3a3a6a 100%) !important; }
+.main-card { background: rgba(255,255,255,0.10) !important; border-radius: 1.5rem !important; box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37) !important; border: 1px solid rgba(255,255,255,0.18) !important; }
+.brand-logo { width: 72px; height: 72px; border-radius: 1rem; background: #fff; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(0,0,0,0.10); }
+h1 { font-weight: 600 !important; color: #fff !important; letter-spacing: 0.01em; }
+.subtitle { color: #e0e0f0 !important; }
+.logto-btn { background: #6c63ff !important; color: #fff !important; font-weight: 600 !important; border-radius: 0.75rem !important; transition: background 0.2s; }
+.logto-btn:hover { background: #554ee0 !important; }
+.section-title { color: #fff !important; font-weight: 600 !important; font-size: 1.25rem !important; margin-bottom: 0.5rem; }
+.placeholder { color: #b3b3d1 !important; font-size: 1rem !important; }
