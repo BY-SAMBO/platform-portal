@@ -1,13 +1,23 @@
-import { useLogto } from '@logto/next';
+import useSWR from 'swr';
 import Link from 'next/link';
 import Head from 'next/head';
 
-export default function Editor() {
-  const { isAuthenticated } = useLogto();
+const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
-  if (!isAuthenticated) {
+export default function Editor() {
+  const { data, error, isLoading } = useSWR('/api/logto/user', fetcher);
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center" style={{ fontFamily: 'Poppins, sans-serif', background: 'linear-gradient(135deg, #1e1e2f 0%, #3a3a6a 100%)' }}>
+        <div className="text-white text-xl">Cargando...</div>
+      </div>
+    );
+  }
+
+  if (error || !data?.isAuthenticated) {
     if (typeof window !== 'undefined') {
-      window.location.href = '/api/logto/sign-in';
+      window.location.assign('/api/logto/sign-in');
     }
     return null;
   }
