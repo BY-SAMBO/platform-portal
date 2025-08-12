@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import Head from 'next/head';
 
 export default function Home() {
@@ -15,12 +14,10 @@ export default function Home() {
           </div>
           <h1 className="text-2xl mb-1" style={{ fontWeight: 600, color: '#fff', letterSpacing: '0.01em' }}>Bootcamp Portal Next.js</h1>
           <div className="subtitle text-center mb-4" style={{ color: '#e0e0f0' }}>Inicia sesión con tu cuenta organizacional para acceder a tu dashboard personalizado.</div>
-          <Link href="/api/logto/sign-in" legacyBehavior>
-            <a className="logto-btn px-6 py-3 text-lg w-full flex items-center justify-center gap-2" style={{ background: '#6c63ff', color: '#fff', fontWeight: 600, borderRadius: '0.75rem', textDecoration: 'none', transition: 'background 0.2s' }}>
-              <svg width="22" height="22" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#fff"/><text x="12" y="16" textAnchor="middle" fontSize="14" fill="#6c63ff">SSO</text></svg>
-              Iniciar sesión con SSO
-            </a>
-          </Link>
+          <a href="/api/logto/sign-in" className="logto-btn px-6 py-3 text-lg w-full flex items-center justify-center gap-2" style={{ background: '#6c63ff', color: '#fff', fontWeight:600, borderRadius: '0.75rem', textDecoration: 'none', transition: 'background 0.2s' }}>
+            <svg width="22" height="22" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#fff"/><text x="12" y="16" textAnchor="middle" fontSize="14" fill="#6c63ff">SSO</text></svg>
+            Iniciar sesión con SSO
+          </a>
         </div>
       </div>
     </>
