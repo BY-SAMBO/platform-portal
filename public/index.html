@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bootcamp Portal</title>
+  <!-- Google Fonts: Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { font-family: 'Poppins', sans-serif !important; background: linear-gradient(135deg, #1e1e2f 0%, #3a3a6a 100%) !important; }
+    .main-card { background: rgba(255,255,255,0.10) !important; border-radius: 1.5rem !important; box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37) !important; border: 1px solid rgba(255,255,255,0.18) !important; }
+    .brand-logo { width: 72px; height: 72px; border-radius: 1rem; background: #fff; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(0,0,0,0.10); }
+    h1 { font-weight: 600 !important; color: #fff !important; letter-spacing: 0.01em; }
+    .subtitle { color: #e0e0f0 !important; }
+    .logto-btn { background: #6c63ff !important; color: #fff !important; font-weight: 600 !important; border-radius: 0.75rem !important; transition: background 0.2s; }
+    .logto-btn:hover { background: #554ee0 !important; }
+    .section-title { color: #fff !important; font-weight: 600 !important; font-size: 1.25rem !important; margin-bottom: 0.5rem; }
+    .placeholder { color: #b3b3d1 !important; font-size: 1rem !important; }
+  </style>
+  <!-- Logto JS SDK (assume available via CDN) -->
+  <script src="https://unpkg.com/@logto/browser/dist/logto.min.js"></script>
+</head>
+<body class="min-h-screen flex items-center justify-center">
+  <div class="main-card p-8 max-w-md w-full flex flex-col items-center gap-6">
+    <div class="brand-logo mb-2">
+      <!-- Replace with your logo image -->
+      <img src="https://placehold.co/72x72/6c63ff/fff?text=✴" alt="Bootcamp Logo" class="w-12 h-12" />
+    </div>
+    <h1 class="text-2xl mb-1">Bootcamp Portal</h1>
+    <div class="subtitle text-center mb-4">Sign in with your organization account to access your personalized dashboard.</div>
+    <button id="logto-login" class="logto-btn px-6 py-3 text-lg w-full flex items-center justify-center gap-2">
+      <svg width="22" height="22" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#fff"/><text x="12" y="16" text-anchor="middle" font-size="14" fill="#6c63ff">SSO</text></svg>
+      Sign in with SSO
+    </button>
+    <div class="w-full mt-8">
+      <div class="section-title">Future Dashboard Blocks</div>
+      <div class="placeholder mb-2">• News/Announcements (editable)</div>
+      <div class="placeholder mb-2">• Group/Project Info</div>
+      <div class="placeholder mb-2">• Tool Links (redirects)</div>
+      <div class="placeholder">• AI Interactions (coming soon)</div>
+    </div>
+  </div>
+  <script>
+    // Replace with your Logto config
+    const logtoConfig = {
+      endpoint: 'https://your-logto-endpoint', // e.g., https://my-logto.logto.app
+      appId: 'your-app-id',
+      redirectUri: window.location.origin + '/home',
+      scopes: ['openid', 'profile', 'email']
+    };
+    const logtoClient = new window.LogtoClient(logtoConfig);
+    document.getElementById('logto-login').onclick = () => {
+      logtoClient.signIn();
+    };
+  </script>
+</body>
+</html>
